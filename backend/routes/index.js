@@ -28,4 +28,14 @@ router.get('/api/mock-rooms', (req, res) => {
     })
 })
 
+router.get('/api/mock-rooms/:id', (req, res) => {
+    const { id } = req.params;
+    const room = MOCK_ROOMS.filter((r) => (r.id == id));
+
+    return res.json({
+        message: "Success",
+        room: room[0]
+    })
+})
+
 module.exports = router

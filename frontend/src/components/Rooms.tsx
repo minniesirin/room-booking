@@ -56,9 +56,9 @@ function Rooms() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {
                     rooms.map((room: RoomProps) => {
-                        const {id, name, location, capacity} = room
+                        const {id, name, location, capacity, is_active} = room
                         return (
-                            <RoomCard key={id} name={name} location={location} capacity={capacity} />
+                            <RoomCard key={id} id={id} name={name} location={location} capacity={capacity} is_active={is_active} />
                         )
                     })
                 }

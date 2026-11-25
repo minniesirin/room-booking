@@ -51,9 +51,9 @@ function Home() {
 
                     {
                         rooms.map((room: RoomProps) => {
-                            const { id, name, location, capacity } = room
+                            const { id, name, location, capacity, is_active } = room
                             return (
-                                <RoomCardSmall key={id} name={name} location={location} capacity={capacity} />
+                                <RoomCardSmall key={id} id={id} name={name} location={location} capacity={capacity} is_active={is_active} />
                             )
                         })
                     }

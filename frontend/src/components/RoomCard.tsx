@@ -1,11 +1,15 @@
-interface RoomCardProps {
+import { Link } from "react-router"
+
+interface RoomProps{
+    id: number
     name: string
     location: string
     capacity: number
+    is_active: boolean
 }
 
-function RoomsCard(props: RoomCardProps) {
-    const { name, location, capacity } = props
+function RoomsCard(props: RoomProps) {
+    const { id, name, location, capacity } = props
 
     return (
         <div className="bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col">
@@ -36,9 +40,9 @@ function RoomsCard(props: RoomCardProps) {
 
                 {/* ปุ่มด้านล่างการ์ด */}
                 <div className="mt-5 pt-4 border-t border-slate-100 flex items-center justify-end">
-                    <div className="w-full text-center py-2 px-4 rounded-xl bg-slate-900 text-white text-sm font-medium hover:bg-slate-800 transition cursor-pointer">
+                    <Link to={`/booking/${id}`} className="w-full text-center py-2 px-4 rounded-xl bg-slate-900 text-white text-sm font-medium hover:bg-slate-800 transition cursor-pointer">
                         ดูรายละเอียด / จองห้อง
-                    </div>
+                    </Link>
                 </div>
             </div>
         </div>

@@ -1,10 +1,12 @@
-interface RoomCardProps{
+interface RoomProps{
+    id: number
     name: string
     location: string
     capacity: number
+    is_active: boolean
 }
 
-function RoomsCardSmall(props: RoomCardProps) {
+function RoomsCardSmall(props: RoomProps) {
     const { name, capacity, location } = props
     return (
         <div className="p-6 border rounded-lg bg-slate-50">
